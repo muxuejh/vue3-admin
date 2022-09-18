@@ -1,4 +1,4 @@
-<template>主页-home.vue</template>
+<template>member/mail.vue</template>
 
 <script setup lang="ts"></script>
 

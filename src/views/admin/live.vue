@@ -1,4 +1,4 @@
-<template>主页-home.vue</template>
+<template>直播</template>
 
 <script setup lang="ts"></script>
 

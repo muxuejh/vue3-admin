@@ -33,3 +33,46 @@ async function bootstrap() {
 
 bootstrap()
 ```
+
+## 设置 src 别名
+
+1. 安装插件
+   ```shell
+    yarn add -D path
+    yarn add -D @types/node // 类型支持
+   ```
+2. 在 vite.config.ts 中配置
+
+   ```ts
+   import path from 'path'
+
+   export default defineConfig({
+     ...
+     // 设置别名
+     resolve: {
+       alias: { '@': path.resolve(__dirname, 'src') }
+     }
+   })
+   ```
+
+之后就可以使用 @ 代表 src 目录了
+
+## import.meta.glob 批量引入文件（可用于自动注册路由，不用手动的生明路由和组件的映射关系）
+
+Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块
+
+```js
+const modules = import.meta.glob('./src/*.js')
+```
+
+以上将会被转译为下面的样子：
+
+```js
+// vite 生成的代码
+const modules = {
+  './src/foo.js': () => import('./src/foo.js'),
+  './src/bar.js': () => import('./src/bar.js')
+}
+```
+
+匹配到的文件默认是懒加载的，通过动态导入实现，并会在构建时分离为独立的 chunk。
