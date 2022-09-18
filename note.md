@@ -57,8 +57,9 @@ bootstrap()
 
 之后就可以使用 @ 代表 src 目录了
 
-## import.meta.glob 批量引入文件（可用于自动注册路由，不用手动的生明路由和组件的映射关系）
+## 自动注册路由
 
+import.meta.glob 批量引入文件（可用于自动注册路由，不用手动的生明路由和组件的映射关系）
 Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块
 
 ```js
@@ -76,3 +77,7 @@ const modules = {
 ```
 
 匹配到的文件默认是懒加载的，通过动态导入实现，并会在构建时分离为独立的 chunk。
+
+## 第三方库的类型支持
+
+yarn add lodash 安装 lodash 之后没有提示 还使用 yarn add -D @types/lodash 命令安装，就会有提示，其他库应该也是如此
