@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import userApi from './apis/userApi'
+
+const result = await userApi.login()
+console.log(result.data.token)
+</script>
 
 <template>
   <ul class="bg-red-800">
