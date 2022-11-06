@@ -3,6 +3,7 @@
  */
 
 import { RouteRecordRaw } from 'vue-router'
+import { env } from '../utils/helper'
 
 const layouts = import.meta.glob('../layouts/*.vue', { eager: true }) // vite 提供的 api,获取 layouts 下的全部 vue 文件
 // console.log(layouts)
@@ -58,4 +59,6 @@ function getRouteByModule(file: string, module: { [key: string]: any }) {
   return Object.assign(route, module.default?.route)
 }
 
-export default getRoutes()
+const routes = env.VITE_ROUTER_AUTOLOAD ? getRoutes() : ([] as RouteRecordRaw[])
+
+export default routes
