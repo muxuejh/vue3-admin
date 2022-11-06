@@ -12,10 +12,12 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@": ["src"],
+      "@/*": ["src/*"]
+    },
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts",

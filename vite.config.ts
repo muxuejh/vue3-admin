@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import alias from './vite/alias'
 import { parseEnv } from './vite/util'
 import setupPlugins from './vite/plugins'
-
 // https://vitejs.dev/config/
 /* export default defineConfig({
   plugins: [vue()],
