@@ -6,14 +6,14 @@
       <div class="p-6">
         <h2 class="text-center text-gray-700 text-lg mt-3">会员登录</h2>
         <div class="mt-8">
-          <LwInput />
-          <LwInput class="mt-5" />
+          <lwInput />
+          <lwInput class="mt-5" />
         </div>
-        <LwButton class="mt-5" />
+        <lwButton class="mt-5" />
         <div class="flex gap-2 justify-center mt-5">
-          <LwLink text="网站首页" />
-          <LwLink text="会员注册" />
-          <LwLink text="找回密码" />
+          <lwLink text="网站首页" />
+          <lwLink text="会员注册" />
+          <lwLink text="找回密码" />
         </div>
       </div>
       <div class="hidden md:block">
@@ -23,10 +23,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import LwInput from '@/components/lw-input.vue'
-import LwButton from '@/components/lw-button.vue'
-import LwLink from '@/components/lw-link.vue'
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss"></style>

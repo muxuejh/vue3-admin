@@ -6,9 +6,9 @@ import { setupPlugins } from './plugins'
 
 async function bootstrap() {
   const app = createApp(App)
-  setupPlugins(app)
+
   setupRouter(app)
-  // app.use(router)
+  setupPlugins(app)
 
   await router.isReady() // 路由处理好后再挂载页面
   app.mount('#app')
