@@ -1,8 +1,17 @@
 <template>
-  <input type="text" placeholder="请输入手机号或邮箱" class="lw-input" />
+  <input
+    type="text"
+    class="lw-input"
+    :value="props.modelValue"
+    @input="$emit('update:modelValue', (<HTMLInputElement>$event.target).value)"
+  />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+  modelValue: String
+})
+</script>
 
 <style scoped lang="scss">
 .lw-input {
