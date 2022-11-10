@@ -1,3 +1,9 @@
+# 存在的问题
+
+- .ts 文件中使用 @ 别名报错，但能正常使用
+
+- live.vue 中引入 '@vee-validate/i18n/dist/locale/zh_CN.json' 报错但能正常使用
+
 ## 创建项目
 
 1. yarn create vite
@@ -81,3 +87,5 @@ const modules = {
 ## 第三方库的类型支持
 
 yarn add lodash 安装 lodash 之后没有提示 还使用 yarn add -D @types/lodash 命令安装，就会有提示，其他库应该也是如此
+
+## 表单验证

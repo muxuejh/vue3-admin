@@ -7,6 +7,13 @@
   resolved "https://registry.npmmirror.com/@babel/parser/-/parser-7.19.1.tgz#6f6d6c2e621aad19a92544cc217ed13f1aac5b4c"
   integrity sha512-h7RCSorm1DdTVGJf3P2Mhj3kdnkmF/EiysUkzS2TdgAYqyjFdMQJbVuXOBej2SBJaXan/lIVtT6KkGbyyq753A==
 
+"@babel/runtime@^7.15.4":
+  version "7.20.1"
+  resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.20.1.tgz#1148bb33ab252b165a06698fde7576092a78b4a9"
+  integrity sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==
+  dependencies:
+    regenerator-runtime "^0.13.10"
+
 "@esbuild/linux-loong64@0.15.7":
   version "0.15.7"
   resolved "https://registry.npmmirror.com/@esbuild/linux-loong64/-/linux-loong64-0.15.7.tgz#1ec4af4a16c554cbd402cc557ccdd874e3f7be53"
@@ -59,6 +66,11 @@
   resolved "https://registry.npmmirror.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
+"@types/lodash@^4.14.175":
+  version "4.14.188"
+  resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.188.tgz#e4990c4c81f7c9b00c5ff8eae389c10f27980da5"
+  integrity sha512-zmEmF5OIM3rb7SbLCFYoQhO4dGt2FRM9AMkxvA3LaADOF1n8in/zGJlWji9fmafLoNyz+FoL6FE0SLtGIArD7w==
+
 "@types/lodash@^4.14.185":
   version "4.14.185"
   resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.185.tgz#c9843f5a40703a8f5edfd53358a58ae729816908"
@@ -80,6 +92,16 @@
   integrity sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==
   dependencies:
     "@types/node" "*"
+
+"@vee-validate/i18n@^4.7.2":
+  version "4.7.2"
+  resolved "https://registry.npmmirror.com/@vee-validate/i18n/-/i18n-4.7.2.tgz#0e86d24e3aabbb8e69f982c10ae96df886a88cb2"
+  integrity sha512-VG/G4BcqLT/MO7zYoYjFpmONoKzycEx1PqhPUXR4UMcc6Vkm3t2WwtwGufFA21VB2ytNF04ueTpS5Zt3h8JXzw==
+
+"@vee-validate/rules@^4.7.2":
+  version "4.7.2"
+  resolved "https://registry.npmmirror.com/@vee-validate/rules/-/rules-4.7.2.tgz#16d6962c256f173ac4ec03353bb9bd44ddb65a66"
+  integrity sha512-hE87ahGp2q31l2286VouObIOjikcdz0P2Lhuq2E8Iyhapi7rpQqUxG0YXUgvBomK34/mc4IiG5IqBkmdniVPdQ==
 
 "@vitejs/plugin-vue@^3.1.0":
   version "3.1.0"
@@ -170,6 +192,11 @@
   dependencies:
     "@vue/compiler-dom" "3.2.39"
     "@vue/shared" "3.2.39"
+
+"@vue/devtools-api@^6.0.0-beta.15":
+  version "6.4.5"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.4.5.tgz#d54e844c1adbb1e677c81c665ecef1a2b4bb8380"
+  integrity sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==
 
 "@vue/devtools-api@^6.1.4":
   version "6.2.1"
@@ -771,6 +798,11 @@ lilconfig@^2.0.5, lilconfig@^2.0.6:
   resolved "https://registry.npmmirror.com/lilconfig/-/lilconfig-2.0.6.tgz#32a384558bd58af3d4c6e077dd1ad1d397bc69d4"
   integrity sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.npmmirror.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
@@ -836,6 +868,11 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmmirror.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
+nanoclone@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
+  integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
 
 nanoid@^3.3.4:
   version "3.3.4"
@@ -965,6 +1002,11 @@ process@^0.11.1:
   resolved "https://registry.npmmirror.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
+property-expr@^2.0.4:
+  version "2.0.5"
+  resolved "https://registry.npmmirror.com/property-expr/-/property-expr-2.0.5.tgz#278bdb15308ae16af3e3b9640024524f4dc02cb4"
+  integrity sha512-IJUkICM5dP5znhCckHSv30Q4b5/JA5enCtkRHYaOVOAocnH/1BQEYTC5NMfT3AVl/iXKdr3aqQbQn9DxyWknwA==
+
 proxy-from-env@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmmirror.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
@@ -993,6 +1035,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+regenerator-runtime@^0.13.10:
+  version "0.13.10"
+  resolved "https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz#ed07b19616bcbec5da6274ebc75ae95634bfc2ee"
+  integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
 
 resolve@^1.1.7, resolve@^1.19.0, resolve@^1.22.1:
   version "1.22.1"
@@ -1058,6 +1105,18 @@ statuses@~1.5.0:
   resolved "https://registry.npmmirror.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
+stylelint-config-recommended@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.npmmirror.com/stylelint-config-recommended/-/stylelint-config-recommended-9.0.0.tgz#1c9e07536a8cd875405f8ecef7314916d94e7e40"
+  integrity sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==
+
+stylelint-config-standard@^29.0.0:
+  version "29.0.0"
+  resolved "https://registry.npmmirror.com/stylelint-config-standard/-/stylelint-config-standard-29.0.0.tgz#4cc0e0f05512a39bb8b8e97853247d3a95d66fa2"
+  integrity sha512-uy8tZLbfq6ZrXy4JKu3W+7lYLgRQBxYTUUB88vPgQ+ZzAxdrvcaSUW9hOMNLYBnwH+9Kkj19M2DHdZ4gKwI7tg==
+  dependencies:
+    stylelint-config-recommended "^9.0.0"
+
 supports-color@^7.1.0:
   version "7.2.0"
   resolved "https://registry.npmmirror.com/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
@@ -1105,6 +1164,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+toposort@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmmirror.com/toposort/-/toposort-2.0.2.tgz#ae21768175d1559d48bef35420b2f4962f09c330"
+  integrity sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==
+
 typescript@^4.6.4:
   version "4.8.3"
   resolved "https://registry.npmmirror.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
@@ -1139,6 +1203,13 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
+
+vee-validate@^4.5.8:
+  version "4.5.8"
+  resolved "https://registry.npmmirror.com/vee-validate/-/vee-validate-4.5.8.tgz#8e394978ef3b74e589b869c626cd2a7d391ac81c"
+  integrity sha512-XZx2J93rlET49CdIIoxG9R6wQNoT3RxUUw9ar3QbIhczpzbtlm4BQ+TpCA9DoYHKFlApcXnE28WU7m4quoPsCA==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.15"
 
 vite-plugin-mock@^2.9.6:
   version "2.9.6"
@@ -1207,3 +1278,16 @@ yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.npmmirror.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
+yup@^0.32.11:
+  version "0.32.11"
+  resolved "https://registry.npmmirror.com/yup/-/yup-0.32.11.tgz#d67fb83eefa4698607982e63f7ca4c5ed3cf18c5"
+  integrity sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "@types/lodash" "^4.14.175"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    nanoclone "^0.2.1"
+    property-expr "^2.0.4"
+    toposort "^2.0.2"
