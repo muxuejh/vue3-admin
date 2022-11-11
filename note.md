@@ -2,7 +2,7 @@
 
 - 使用 @ 别名报错且没有提示，但能正常使用
 
-- live.vue 中引入 '@vee-validate/i18n/dist/locale/zh_CN.json' 报错但能正常使用
+- 引入 '@vee-validate/i18n/dist/locale/zh_CN.json' 报错但能正常使用
 
 ## 创建项目
 
