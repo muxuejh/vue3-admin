@@ -3,7 +3,7 @@
  */
 
 import { RouteRecordRaw } from 'vue-router'
-import { env } from '../utils/helper'
+import { env } from '../utils'
 
 const layouts = import.meta.glob('../layouts/*.vue', { eager: true }) // vite 提供的 api,获取 layouts 下的全部 vue 文件
 // console.log(layouts)

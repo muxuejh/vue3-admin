@@ -12,12 +12,19 @@
 
             <!-- <Field name="account" :rules="{ required: true, email: true }" label="账号" class="lw-input" /> -->
 
-            <Field name="account" class="lw-input" label="账号" placeholder="请输入邮箱或手机号" />
+            <Field
+              name="account"
+              value="666666@qq.com"
+              class="lw-input"
+              label="账号"
+              placeholder="请输入邮箱或手机号"
+            />
             <div v-if="errors.account" class="lw-error">请输入邮箱或手机号</div>
             <!-- <ErrorMessage name="account" as="div" class="lw-error" /> -->
             <!-- autocomplete 规定输入字段是否应该启用自动完成功能 -->
             <Field
               name="password"
+              value="999999"
               class="lw-input mt-3"
               label="密码"
               placeholder="请输入密码"
@@ -47,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import userApi from '../../apis/userApi'
 import v from '../../plugins/validate'
 
 const { Form, Field, ErrorMessage } = v
@@ -61,14 +69,14 @@ const schema = {
 //   password: v.yup.string().required().min(3).label('密码')
 // })
 
-const onSubmit = values => {
-  console.log(values)
-
-  alert(33)
+const onSubmit = async values => {
+  const {
+    data: { token }
+  } = await userApi.login(values)
+  localStorage.setItem('token', token)
 }
 
 // import { reactive } from 'vue'
-
 // const form = reactive({
 //   account: '',
 //   password: ''

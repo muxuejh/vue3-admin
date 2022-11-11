@@ -12,9 +12,11 @@ function info() {
 interface LoginInterface {
   token: string
 }
-function login() {
+function login(data) {
   return http.request<LoginInterface>({
-    url: 'login'
+    url: 'login',
+    method: 'post',
+    data
   })
 }
 

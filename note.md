@@ -1,6 +1,6 @@
 # 存在的问题
 
-- .ts 文件中使用 @ 别名报错，但能正常使用
+- 使用 @ 别名报错且没有提示，但能正常使用
 
 - live.vue 中引入 '@vee-validate/i18n/dist/locale/zh_CN.json' 报错但能正常使用
 
