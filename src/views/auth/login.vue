@@ -54,9 +54,12 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import userApi from '../../apis/userApi'
 import v from '../../plugins/validate'
 import { storage } from '../../utils'
+
+const router = useRouter()
 
 const { Form, Field, ErrorMessage } = v
 
@@ -75,14 +78,15 @@ const onSubmit = async values => {
     data: { token }
   } = await userApi.login(values)
   // localStorage.setItem('token', token)
-  storage.set('token', { expire: 100, token })
+  storage.set('token', { token })
+  router.replace({ name: 'home' })
 }
+</script>
 
-// import { reactive } from 'vue'
-// const form = reactive({
-//   account: '',
-//   password: ''
-// })
+<script lang="ts">
+export default {
+  route: { name: 'login', meta: { guest: true } }
+}
 </script>
 
 <style scoped lang="scss">

@@ -5,3 +5,10 @@
 .lw-error {
   @apply rounded-md bg-pink-500 text-white text-xs px-2 mt-2 py-1;
 }
+
+.lw-button {
+  @apply bg-violet-700 text-white py-2 px-4 rounded-md hover:bg-violet-500 duration-300;
+  &.lw-danger {
+    @apply bg-fuchsia-700 hover:bg-fuchsia-500;
+  }
+}
