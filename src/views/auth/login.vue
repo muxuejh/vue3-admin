@@ -56,6 +56,7 @@
 <script setup lang="ts">
 import userApi from '../../apis/userApi'
 import v from '../../plugins/validate'
+import { storage } from '../../utils'
 
 const { Form, Field, ErrorMessage } = v
 
@@ -73,7 +74,8 @@ const onSubmit = async values => {
   const {
     data: { token }
   } = await userApi.login(values)
-  localStorage.setItem('token', token)
+  // localStorage.setItem('token', token)
+  storage.set('token', { expire: 100, token })
 }
 
 // import { reactive } from 'vue'
