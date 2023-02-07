@@ -8,19 +8,26 @@
       <!-- 菜单 -->
       <Menu />
     </div>
-    <div class="content flex-1 bg-gray-200">
-      <router-view />
+    <div class="content flex-1 bg-gray-100">
+      <Navbar />
+      <HistoryLink />
+      <div class="m-3 p-5">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Menu from './components/menu.vue'
+import HistoryLink from './admin/historyLink.vue'
+import Menu from './admin/menu.vue'
+import Navbar from './admin/navbar.vue'
 </script>
 
 <script lang="ts">
 export default {
-  route: { meta: { auth: true } }
+  route: { meta: { auth: true } },
+  components: { Navbar, HistoryLink }
 }
 </script>
 
