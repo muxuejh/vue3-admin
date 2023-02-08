@@ -1,17 +1,10 @@
 <template>
-  <div class="admin h-screen w-screen flex">
-    <div class="menu w-[200px] bg-gray-800 p-4">
-      <div class="logo text-gray-300 flex items-center">
-        <i class="fas fa-robot text-fuchsia-300 mr-2 text-[25px]"></i>
-        <span class="text-md">后台管理系统</span>
-      </div>
-      <!-- 菜单 -->
-      <Menu />
-    </div>
+  <div class="admin h-min-screen w-screen flex">
+    <Menu class="hidden md:block" />
     <div class="content flex-1 bg-gray-100">
       <Navbar />
       <HistoryLink />
-      <div class="m-3 p-5">
+      <div class="m-5">
         <router-view />
       </div>
     </div>

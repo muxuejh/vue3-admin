@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-flow-col gap-3 bg-white">
+  <div class="grid md:grid-flow-col gap-3">
     <el-card shadow="hover" :body-style="{ padding: '20px' }" v-for="card of cards" class="cursor-pointer">
       <template #header>
         <div class="flex justify-between items-center">
@@ -18,9 +18,19 @@
     </el-card>
   </div>
 
-  <div class="bg-white p-3 mt-5 grid grid-flow-col gap-3">
-    <div id="echart1" style="height: 500px"></div>
-    <div id="echart2" style="height: 500px"></div>
+  <div class="mt-5 grid md:grid-cols-2 gap-3">
+    <el-card shadow="always" :body-style="{ padding: '20px' }">
+      <template #header>
+        <div>用户统计</div>
+      </template>
+      <div id="echart1" class="w-full h-72"></div>
+    </el-card>
+    <el-card shadow="always" :body-style="{ padding: '20px' }">
+      <template #header>
+        <div>用户统计</div>
+      </template>
+      <div id="echart2" class="w-full h-72"></div>
+    </el-card>
   </div>
 </template>
 

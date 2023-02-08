@@ -1,19 +1,26 @@
 <template>
-  <div class="left-container">
-    <dl v-for="(menu, index) in menus" :key="index">
-      <dt @click="handle(menu)">
-        <section>
-          <i :class="menu.icon"></i>
-          <span class="text-md">{{ menu.title }}</span>
-        </section>
-        <section>
-          <i class="fa-sharp fa-solid fa-chevron-down"></i>
-        </section>
-      </dt>
-      <dd v-show="menu.active" :class="{ active: cMenu.active }" v-for="(cMenu, index) in menu.children" :key="index">
-        {{ cMenu.title }}
-      </dd>
-    </dl>
+  <div class="menu w-[200px] bg-gray-800 p-4">
+    <div class="logo text-gray-300 flex items-center">
+      <i class="fas fa-robot text-fuchsia-300 mr-2 text-[25px]"></i>
+      <span class="text-md">后台管理系统</span>
+    </div>
+    <!-- 菜单 -->
+    <div class="left-container">
+      <dl v-for="(menu, index) in menus" :key="index">
+        <dt @click="handle(menu)">
+          <section>
+            <i :class="menu.icon"></i>
+            <span class="text-md">{{ menu.title }}</span>
+          </section>
+          <section>
+            <i class="fa-sharp fa-solid fa-chevron-down duration-300" :class="{ 'rotate-180': menu.active }"></i>
+          </section>
+        </dt>
+        <dd v-show="menu.active" :class="{ active: cMenu.active }" v-for="(cMenu, index) in menu.children" :key="index">
+          {{ cMenu.title }}
+        </dd>
+      </dl>
+    </div>
   </div>
 </template>
 
@@ -68,7 +75,7 @@ const handle = (pMenu: IMenuItem, cMenu?: IMenuItem) => {
       }
     }
     dd {
-      @apply py-3 pl-4 my-2 text-white rounded-md cursor-pointer  duration-300 hover:bg-violet-500;
+      @apply py-3 pl-4 my-2 text-white rounded-md cursor-pointer  duration-300 hover:bg-violet-500 bg-gray-700;
       &.active {
         @apply bg-violet-700;
       }
