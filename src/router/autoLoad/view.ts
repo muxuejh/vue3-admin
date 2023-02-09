@@ -3,11 +3,11 @@
  */
 
 import { RouteRecordRaw } from 'vue-router'
-import { env } from '../utils'
+import { env } from '../../utils'
 
-const layouts = import.meta.glob('../layouts/*.vue', { eager: true }) // vite 提供的 api,获取 layouts 下的全部 vue 文件
+const layouts = import.meta.glob('../../layouts/*.vue', { eager: true }) // vite 提供的 api,获取 layouts 下的全部 vue 文件
 // console.log(layouts)
-const views = import.meta.glob('../views/**/*.vue', { eager: true }) // ** 表示可以获得子目录
+const views = import.meta.glob('../../views/**/*.vue', { eager: true }) // ** 表示可以获得子目录
 // console.log(views)
 
 // 获取布局路由
@@ -28,7 +28,7 @@ function getChildrenRoutes(layoutRoute: RouteRecordRaw) {
   const routes = [] as RouteRecordRaw[]
   Object.entries(views).forEach(([file, module]) => {
     // console.log(file)
-    if (file.includes(`../views/${layoutRoute.name as string}`)) {
+    if (file.includes(`../../views/${layoutRoute.name as string}`)) {
       // console.log(file)
       const route = getRouteByModule(file, module as any)
       // console.log(route)
@@ -59,6 +59,8 @@ function getRouteByModule(file: string, module: { [key: string]: any }) {
   return Object.assign(route, module.default?.route)
 }
 
-const routes = env.VITE_ROUTER_AUTOLOAD ? getRoutes() : ([] as RouteRecordRaw[])
+// const routes = env.VITE_ROUTER_AUTOLOAD ? getRoutes() : ([] as RouteRecordRaw[])
 
-export default routes
+// export default routes
+
+export default getRoutes

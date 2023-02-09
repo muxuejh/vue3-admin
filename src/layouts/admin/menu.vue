@@ -6,18 +6,24 @@
     </div>
     <!-- 菜单 -->
     <div class="left-container">
-      <dl v-for="(menu, index) in menus" :key="index">
-        <dt @click="handle(menu)">
+      <dl v-for="(route, index) in routerStore.routes" :key="index">
+        <dt @click="handle(route)">
           <section>
-            <i :class="menu.icon"></i>
-            <span class="text-md">{{ menu.title }}</span>
+            <i :class="route.meta.icon"></i>
+            <span class="text-md">{{ route.meta.title }}</span>
           </section>
           <section>
-            <i class="fa-sharp fa-solid fa-chevron-down duration-300" :class="{ 'rotate-180': menu.active }"></i>
+            <i class="fa-sharp fa-solid fa-chevron-down duration-300" :class="{ 'rotate-180': route.meta.isClick }"></i>
           </section>
         </dt>
-        <dd v-show="menu.active" :class="{ active: cMenu.active }" v-for="(cMenu, index) in menu.children" :key="index">
-          {{ cMenu.title }}
+        <dd
+          v-for="(childRoute, index) in route.children"
+          :key="index"
+          v-show="route.meta.isClick"
+          :class="{ active: childRoute.meta.isClick }"
+          @click="handle(route, childRoute)"
+        >
+          {{ childRoute.meta.title }}
         </dd>
       </dl>
     </div>
@@ -26,8 +32,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouteRecordNormalized, RouteRecordRaw } from 'vue-router'
+import { router } from '../../store/router'
 
-interface IMenuItem {
+/* interface IMenuItem {
   title: string
   icon?: string
   active?: boolean
@@ -47,18 +55,38 @@ const menus = ref<IMenu[]>([
     title: '编辑器',
     icon: 'fab fa-behance-square',
     children: [{ title: 'markdown编辑器' }, { title: '富文本编辑器' }]
+  },
+  {
+    title: '错误页面',
+    icon: 'fab fa-behance-square',
+    active: true,
+    children: [{ title: '404页面', active: true }, { title: '403页面' }, { title: '500页面' }]
+  },
+  {
+    title: '编辑器',
+    icon: 'fab fa-behance-square',
+    children: [{ title: 'markdown编辑器' }, { title: '富文本编辑器' }]
   }
-])
+]) */
 
-const resetMenus = () => {
-  menus.value.forEach(pMenu => {
-    pMenu.active = false
-    pMenu.children?.forEach(m => (m.active = false))
+const routerStore = router()
+
+const reset = () => {
+  routerStore.routes.forEach(route => {
+    route.meta.isClick = false
+    route.children.forEach(route => {
+      if (route.meta) {
+        route.meta.isClick = false
+      }
+    })
   })
 }
-const handle = (pMenu: IMenuItem, cMenu?: IMenuItem) => {
-  resetMenus()
-  pMenu.active = true
+const handle = (pRoute: RouteRecordNormalized, cRoute?: RouteRecordRaw) => {
+  reset()
+  pRoute.meta.isClick = true
+  if (cRoute && cRoute.meta) {
+    cRoute.meta.isClick = true
+  }
 }
 </script>
 
