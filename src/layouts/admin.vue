@@ -5,7 +5,11 @@
       <Navbar />
       <HistoryLink />
       <div class="m-5">
-        <router-view />
+        <router-view #default="{ Component }">
+          <Transition appear enter-active-class="animate__animated animate__bounceInRight">
+            <component :is="Component" />
+          </Transition>
+        </router-view>
       </div>
     </div>
   </div>
