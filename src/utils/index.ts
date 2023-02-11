@@ -1,4 +1,5 @@
 import env from './env'
 import storage from './storage'
+import * as user from './user'
 
-export { env, storage }
+export default { env, storage, user }

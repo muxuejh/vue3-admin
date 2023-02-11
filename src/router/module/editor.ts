@@ -3,14 +3,14 @@ import { RouteRecordRaw } from 'vue-router'
 export default {
   name: 'editor',
   path: '/editor',
-  component: () => import('../../layouts/editor.vue'),
-  meta: { title: '编辑器', icon: 'fas fa-baseball-ball', show: true },
+  component: () => import('../../layouts/admin.vue'),
+  meta: { auth: true, menu: { title: '编辑器', icon: 'fas fa-baseball-ball' } },
   children: [
     {
       name: 'markdown',
       path: 'markdown',
       component: () => import('../../views/editor/markdown.vue'),
-      meta: { title: '404页面', show: true }
+      meta: { menu: { title: 'markdown' } }
     },
     {
       name: 'base',

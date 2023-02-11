@@ -2,17 +2,25 @@ import { http } from '../plugins/axios'
 
 export interface User {
   name: string
+  age: number
+  avatar: string
 }
 function info() {
   return http.request<User>({
-    url: 'info'
+    url: 'user/info'
   })
 }
 
 interface LoginInterface {
   token: string
 }
-function login(data) {
+
+export interface ILoginData {
+  account: string
+  password: string
+}
+
+export function login(data: ILoginData) {
   return http.request<LoginInterface>({
     url: 'login',
     method: 'post',

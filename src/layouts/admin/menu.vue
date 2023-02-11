@@ -6,24 +6,24 @@
     </div>
     <!-- 菜单 -->
     <div class="left-container">
-      <dl v-for="(route, index) in routerStore.routes" :key="index">
-        <dt @click="handle(route)">
+      <dl v-for="(menu, index) in menu.menus" :key="index">
+        <dt @click="handle(menu)">
           <section>
-            <i :class="route.meta.icon"></i>
-            <span class="text-md">{{ route.meta.title }}</span>
+            <i :class="menu.icon"></i>
+            <span class="text-md">{{ menu.title }}</span>
           </section>
           <section>
-            <i class="fa-sharp fa-solid fa-chevron-down duration-300" :class="{ 'rotate-180': route.meta.isClick }"></i>
+            <i class="fa-sharp fa-solid fa-chevron-down duration-300" :class="{ 'rotate-180': menu.isClick }"></i>
           </section>
         </dt>
         <dd
-          v-for="(childRoute, index) in route.children"
+          v-for="(cMenu, index) in menu.children"
           :key="index"
-          v-show="route.meta.isClick"
-          :class="{ active: childRoute.meta.isClick }"
-          @click="handle(route, childRoute)"
+          v-show="menu.isClick"
+          :class="{ active: cMenu.isClick }"
+          @click="handle(menu, cMenu)"
         >
-          {{ childRoute.meta.title }}
+          {{ cMenu.title }}
         </dd>
       </dl>
     </div>
@@ -31,61 +31,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { RouteRecordNormalized, RouteRecordRaw } from 'vue-router'
-import { router } from '../../store/router'
+import { IMenu } from '../../../types/menu'
+import router from '../../router'
+import menuStore from '../../store/menuStore'
 
-/* interface IMenuItem {
-  title: string
-  icon?: string
-  active?: boolean
-}
-interface IMenu extends IMenuItem {
-  children?: IMenuItem[]
-}
-
-const menus = ref<IMenu[]>([
-  {
-    title: '错误页面',
-    icon: 'fab fa-behance-square',
-    active: true,
-    children: [{ title: '404页面', active: true }, { title: '403页面' }, { title: '500页面' }]
-  },
-  {
-    title: '编辑器',
-    icon: 'fab fa-behance-square',
-    children: [{ title: 'markdown编辑器' }, { title: '富文本编辑器' }]
-  },
-  {
-    title: '错误页面',
-    icon: 'fab fa-behance-square',
-    active: true,
-    children: [{ title: '404页面', active: true }, { title: '403页面' }, { title: '500页面' }]
-  },
-  {
-    title: '编辑器',
-    icon: 'fab fa-behance-square',
-    children: [{ title: 'markdown编辑器' }, { title: '富文本编辑器' }]
-  }
-]) */
-
-const routerStore = router()
+const menu = menuStore()
 
 const reset = () => {
-  routerStore.routes.forEach(route => {
-    route.meta.isClick = false
-    route.children.forEach(route => {
-      if (route.meta) {
-        route.meta.isClick = false
-      }
+  menu.menus.forEach(menu => {
+    menu.isClick = false
+    menu.children.forEach(cMenu => {
+      cMenu.isClick = false
     })
   })
 }
-const handle = (pRoute: RouteRecordNormalized, cRoute?: RouteRecordRaw) => {
+
+const handle = (pMenu: IMenu, cMenu?: IMenu) => {
   reset()
-  pRoute.meta.isClick = true
-  if (cRoute && cRoute.meta) {
-    cRoute.meta.isClick = true
+  pMenu.isClick = true
+  if (cMenu) {
+    cMenu.isClick = true
+    router.push({ name: cMenu.route })
   }
 }
 </script>

@@ -14,8 +14,9 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"]
+      "@": ["./src"],
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"]
     },
     "types": ["node"]
   },

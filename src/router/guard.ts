@@ -1,28 +1,41 @@
 import { RouteLocationNormalized, Router } from 'vue-router'
-import { storage } from '../utils'
+import { CacheEnum } from '../enum/cacheEnum'
+import userStore from '../store/userStore'
+import utils from '../utils'
+import util from '../utils'
 
 class Guard {
   constructor(private router: Router) {}
 
   public run() {
-    this.router.beforeEach((to, from) => {
-      // console.log(to.meta)
+    this.router.beforeEach(this.beforeEach.bind(this))
+  }
 
-      const token = storage.get('token')?.token
+  private async beforeEach(to: RouteLocationNormalized, from: RouteLocationNormalized) {
+    if (this.isLogin(to) === false) return { name: 'login' }
+    if (this.isGuest(to) === false) return from
+    await this.getUserInfo()
+  }
 
-      if (this.isLogin(to, token) === false) return { name: 'login' }
+  private getUserInfo() {
+    if (this.token()) return userStore().getUserInfo()
+  }
 
-      if (this.isGuest(to, token) === false) return from
-    })
+  private token(): string | null {
+    return util.storage.get(CacheEnum.TOKEN_NAME)?.token
   }
 
   // 是否为游客
-  private isGuest(route: RouteLocationNormalized, token: any) {
-    return Boolean(!route.meta.guest || (route.meta.guest && !token))
+  private isGuest(route: RouteLocationNormalized) {
+    return Boolean(!route.meta.guest || (route.meta.guest && !this.token()))
   }
 
-  private isLogin(route: RouteLocationNormalized, token: any) {
-    return Boolean(!route.meta.auth || (route.meta.auth && token))
+  private isLogin(route: RouteLocationNormalized) {
+    const state = Boolean(!route.meta.auth || (route.meta.auth && this.token()))
+    if (state === false) {
+      utils.storage.set(CacheEnum.REDIRECT_ROUTE_NAME, route.name)
+    }
+    return state
   }
 }
 

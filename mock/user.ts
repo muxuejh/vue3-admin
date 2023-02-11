@@ -3,14 +3,17 @@ import { MockMethod } from 'vite-plugin-mock'
 
 export default [
   {
-    url: '/api/info',
+    url: '/api/user/info',
     method: 'get',
     response: () => {
       return {
         code: 200,
         message: '成功',
+        type: 'success',
         data: {
-          name: '张三'
+          name: '张三',
+          age: 18,
+          avatar: '/images/bg.jpg'
         }
       }
     }

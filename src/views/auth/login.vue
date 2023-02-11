@@ -56,8 +56,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import userApi from '../../apis/userApi'
+import { CacheEnum } from '../../enum/cacheEnum'
 import v from '../../plugins/validate'
-import { storage } from '../../utils'
+import utils from '../../utils'
 
 const router = useRouter()
 
@@ -73,13 +74,8 @@ const schema = {
 //   password: v.yup.string().required().min(3).label('密码')
 // })
 
-const onSubmit = async values => {
-  const {
-    data: { token }
-  } = await userApi.login(values)
-  // localStorage.setItem('token', token)
-  storage.set('token', { token })
-  router.replace({ name: 'home' })
+const onSubmit = async (values: any) => {
+  utils.user.login(values)
 }
 </script>
 
