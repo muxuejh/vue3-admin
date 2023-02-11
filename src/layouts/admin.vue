@@ -20,8 +20,15 @@ import menuStore from '../store/menuStore'
 import HistoryLink from './admin/historyLink.vue'
 import Menu from './admin/menu.vue'
 import Navbar from './admin/navbar.vue'
+import { useRoute, onBeforeRouteUpdate } from 'vue-router'
 
-menuStore().init()
+const route = useRoute()
+const menu = menuStore()
+menu.init()
+
+onBeforeRouteUpdate(() => {
+  menu.addHistoryMenu(route)
+})
 </script>
 
 <script lang="ts">
